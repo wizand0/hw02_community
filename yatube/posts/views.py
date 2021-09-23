@@ -16,6 +16,14 @@ def index(request):
     return render(request, 'posts/index.html', context)
 
 
+def group_list(request):
+    template = 'posts/group_list.html'
+    context = {
+        'text': 'Здесь будет информация о группах проекта Yatube',
+    }
+    return render(request, template, context)
+
+
 def group_posts(request, slug):
     # Функция get_object_or_404 получает по заданным критериям объект
     # из базы данных или возвращает сообщение об ошибке, если объект не найден.
