@@ -3,7 +3,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-User = get_user_model() 
+User = get_user_model()
 
 
 class Group(models.Model):
@@ -17,8 +17,8 @@ class Group(models.Model):
 
 class Post(models.Model):
     # Тип: TextField
-    text = models.TextField() 
-    
+    text = models.TextField()
+
     # Тип поля: DateTimeField, для хранения даты и времени;
     # параметр auto_now_add определяет, что в поле будет автоматически
     # подставлено время и дата создания новой записи
@@ -28,8 +28,8 @@ class Post(models.Model):
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name = 'posts'
-    ) 
+        related_name='posts'
+    )
 
     group = models.ForeignKey(
         Group,
