@@ -5,7 +5,6 @@ from .models import Group, Post
 
 def index(request):
     posts = Post.objects.all()[:10]
-    # В словаре context отправляем информацию в шаблон
     context = {
         'posts': posts,
     }
